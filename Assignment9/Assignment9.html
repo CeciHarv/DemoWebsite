@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Payment Submission Form</title>
+    <link rel="stylesheet" href="../StyleSheet1.css" />
+</head>
+<body>
+    <header id="darkBackground">
+        <h1>Payment Submission form</h1>
+    </header>
+    <main id="darkBackground">
+        <form id="form" action="http://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.php" method="get">
+            <h3> Please submit your payment information below</h3>
+            <div>
+                <label> Card Ownership: </label>
+                <input type="radio" name="CC_Owner" id="CC_OwnerPersonal" value="Personal"> Personal
+                <input type="radio" name="CC_Owner" id="CC_OwnerBusiness" value="Business"> Business
+                <script> document.getElementById("CC_OwnerPersonal").checked = true;</script>
+            </div>
+
+            <div>
+                <label for="Card_Type"> Credit Card Type: </label>
+                <select id="Card_Type" name="Card_Type">
+                    <option value="Visa" selected>Visa</option>
+                    <option value="MasterCard">Master Card</option>
+                    <option value="Discover">Discover</option>
+                    <option value="AmericanExpress">American Express</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="CC_Num">Credit Card Number: </label>
+                <input type="text" name="CC_Num" id="CC_Num" /><br>
+
+            </div>
+
+            <div>
+                <label for="Exp_Month"> Expiration Month: </label>
+                <select id="Exp_Month" name="Exp_Month">
+                    <option value="January" selected>January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+                <label for="Exp_Year"> Expiration Year: </label>
+                <select id="Exp_Year" name="Exp_Year">
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023" selected>2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="checkbox" name="Auth" id="Auth" value="Yes" /> I certify that I am authorized to use this card.
+            </div>
+            <div>
+                <input type="submit" id="Submit" value="Submit">
+                <input type="reset" id="reset" value="Reset">
+            </div>
+
+            <script>
+                window.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("form").addEventListener("submit", validationCheck);
+                });
+
+
+                function validationCheck() {
+                    
+
+                    if (document.getElementById("Card_Type").value == "") {                        
+                        event.preventDefault();
+                        alert("Please select the card type.");
+                        document.getElementById("Card_Type").focus();
+                        return;
+                    }
+
+                    if (document.getElementById("CC_Num").value.length != 9) {                        
+                        event.preventDefault();
+                        alert("Please enter a valid 9 digit credit card number.");
+                        document.getElementById("CC_Num").focus();
+                        return;
+                    }
+
+                    if (!validDate()) {                  
+                        event.preventDefault();
+                        alert("That card is expired. Please use a valid card, or select a valid expiration date.");
+                        document.getElementById("Exp_Month").focus();
+                        return;
+                    }
+
+                    if (!document.getElementById("Auth").checked) {
+                        event.preventDefault();
+                        alert("Please check the box to confirm if you are authorized to use this card.");
+                        document.getElementById("Auth").focus();
+                        return;
+                    }
+
+                };
+
+                var array = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+                function validDate() {
+                    var today = new Date();
+                    var month = today.getMonth();
+                    var year = today.getFullYear();
+
+                    if (year < parseInt(document.getElementById("Exp_Year").value, 10)) {
+                        return true;
+                    }
+
+                    else if (year == parseInt(document.getElementById("Exp_Year").value, 10)) {
+                        if (array.indexOf(document.getElementById("Exp_Month").value) >= month) {                           
+                            return true;
+                        }
+                        
+                    }
+
+                    return false;
+                };
+
+            </script>
+        </form>
+    </main>
+
+    <nav id="darkBackground">
+        <ul>
+
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment1/recipe.html" alt="Assignment 1" target="_blank"> Assignment 1 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment2/ImageMap.html" alt="Assignment 2" target="_blank"> Assignment 2 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318" alt="Assignment 3" target="_blank"> Assignment 3 </a>
+            </li>
+            <li vertical id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment4/Basketball.html" alt="Assignment 4" target="_blank"> Assignment 4 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.html" alt="Assignment 5" target="_blank"> Assignment 5 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.html" alt="Assignment 6" target="_blank"> Assignment 6 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment7/Assignment7.html" alt="Assignment 7" target="_blank"> Assignment 7 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment8/Assignment8.html" alt="Assignment 8" target="_blank"> Assignment 8 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment9/Assignment9.html" alt="Assignment 9" target="_blank"> Assignment 9 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Midterm/MidtermPractice.html" alt="Midterm" target="_blank"> Midterm </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Final/Final.html" alt="Final" target="_blank"> Final </a>
+            </li>
+        </ul>
+
+    </nav>
+</body>
+</html>

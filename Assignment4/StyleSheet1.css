@@ -1,0 +1,18 @@
+body {
+    background-image: url('nba-logo.png');
+}
+
+main {
+    background-image: url('floor.jpg');
+    height: 600px;
+    width: 500px;
+    border: solid 15px;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+img:hover {
+    transition: 5s;
+    transform: translate(300px, 400px) rotate(360deg);
+}
+

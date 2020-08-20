@@ -1,0 +1,56 @@
+body {
+       
+}
+
+th {
+    background-color: darkgreen;
+    color: lightgreen;
+    border: 3px solid black;
+    /*margin: 0px;*/
+    padding: 10px;
+    
+}
+
+td {
+    background-color: lightgreen;
+    color: darkgreen;
+    border: 3px solid black;
+    /*margin: 0px;*/
+    padding: 10px;
+}
+
+table {
+
+    text-align: center;
+    margin: 10px;
+    border-collapse: collapse;
+    padding: 100px;
+    float: right;
+    display: inline;
+    width: 50%;
+}
+    map {
+    float: left;
+    display: inline;
+    width: 50%;
+}
+
+a:link {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+a:visited {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+a:active {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    text-decoration: none;
+    color: yellow;
+}

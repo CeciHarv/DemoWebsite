@@ -1,0 +1,145 @@
+body {
+    background-image: url('hotel-wallpaper.png');
+    font-family: Calibri, Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: darkslategray;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    margin-top: 110px;
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 150px;
+    height: 750px;
+    position: fixed;
+    text-align: center;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 150px;
+    height: 750px;
+}
+
+li {
+    height: 50px;
+    padding-top: 15px;
+    width: 100%;
+}
+
+
+main {
+    border: solid black 1px;
+    float: right;
+    vertical-align: central;
+    margin: 110px 10px 70px 155px;
+    width: 85%;
+    height: 750px;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    text-align: center;
+    vertical-align: central;
+    align-content: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+a {
+    font-family: Calibri, Arial, sans-serif;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+    height: 35px;
+    text-decoration: none;
+}
+
+    a:hover {
+        background-image: url('hotel-wallpaper.png');
+        color: dimgray;
+    }
+
+    a:visited {
+        color: gray;
+    }
+
+    a:active {
+        color: white;
+    }
+
+#darkBackground {
+    background-image: url('prism.png');
+    color: white;
+}
+
+p {
+    text-align: left;
+    padding: 10px 10% 10px 10%;
+    width: 75%;
+    text-indent: initial;
+    font-size: 1.25em;
+}
+
+#image {
+    float: left;
+}
+
+#leftcolumn {
+    margin: 10px 200px 10px 10px;
+    width: 70%;
+}
+
+form {
+    margin: 1%;
+    border: 5px solid gray;
+    width: 30%;
+    text-align: left;
+    padding: 1%;
+    font-size: 1.25em;
+}
+
+input {
+    margin: 20px;
+    padding: 2px;
+}
+
+textarea.outputBox {
+    height: 500px;
+    width: 50%;
+    display: block;
+}
+
+#outputBox {
+    margin: 20px;
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 1.15em;
+    display: block;
+}
+
+#guessBox {
+    margin: 20px;
+}

@@ -1,0 +1,127 @@
+body {
+    background-color: black;
+    font-family: Calibri;
+    color: white;
+}
+
+.homeleft {
+    width: 50%;
+    height: 200px;
+    display: inline-block;
+    float: left; 
+}
+
+.homeright {
+    width: 50%;
+    height: 200px;
+    float: right;
+    display: inline-block;
+}
+
+header {
+    padding: 20px; 
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+li {
+    float: left;
+    width: 25%;
+    list-style-type: none;
+    text-align: center;
+    height: 50px;
+    padding: 0px 0px 0px 0px;
+    margin: -15px 0px 0px -25px;
+    border: 2px solid black;
+    background-color: darkgray;
+}
+
+    li a {
+        display: block;
+        padding: 8px;
+        background-color: darkgray;
+    }
+
+main {
+    align-content: center;
+    text-align: center;
+}
+
+.mySelector {
+    width: 80%;
+    height: auto;
+}
+
+.inventoryDetails {
+    width: 100%;
+    height: 200px;
+    display: block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    color: black;
+}
+
+.inventorysection {
+    float: left;
+    width: 25%;
+    text-align: center;
+    height: 90px;
+    padding: 0px 0px 0px 0px;
+    border: 2px solid darkgray;
+    background-color: lightgray;
+    color: black;
+}
+
+.formelements {
+    height: 2em;
+    text-align: center;
+    padding: 3px;
+    margin: 3px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkgray;
+    text-decoration: none;
+    background: lightgray;
+}
+
+footer {
+    background-color: black;
+    border-top: 3px solid white;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    text-align: right;
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    display: block;
+}
+
+.currentTab {
+    background-color: white;
+    
+}
+
+    .currentTab a  {
+        background-color: white;
+        color: black;
+    }
+
+input [type=text] {
+    width: 75%
+  
+}

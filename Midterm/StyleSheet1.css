@@ -1,0 +1,127 @@
+body {
+    background-image: url('hotel-wallpaper.png');
+    font-family: Calibri, Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: darkslategray;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    margin-top: 110px;
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 150px;
+    height: 750px;
+    position: fixed;
+    text-align: center;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    margin-top: 110px;
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 150px;
+    height: 750px;
+}
+
+li {
+    height: 50px;
+    padding-top: 15px;
+    width: 100%;
+}
+
+
+main {
+    border: solid black 1px;
+    float: right;
+    margin: 110px 10px 10px 155px;
+    width: 85%;
+    height: 750px;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    text-align: center;
+    vertical-align: middle;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+}
+
+a {
+    font-family: Calibri, Arial, sans-serif;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+    height: 35px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-image: url('hotel-wallpaper.png');
+    color: dimgray;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:active {
+    color: white;
+}
+
+#darkBackground {
+    background-image: url('prism.png');
+    color: white;
+}
+
+p {
+    text-align: left;
+    padding: 1% 2% 1% 2%;
+    width: 90%;
+    text-indent: initial;
+    font-size: 1.25em;
+}
+
+#image {
+    float: left;
+    padding: 1%;
+ }
+
+#leftcolumn {
+    float: left;
+    text-align: justify;
+    width: 67%;
+    padding: 1% 1% 0px 1%;
+}
+
+#rightcolumn {
+    float: right;
+    text-align: justify;
+    width: 27%;
+    padding: 1% 1% 0px 1%;
+}
+
+
+span {
+
+}

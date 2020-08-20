@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment 7</title>
+    <link rel="stylesheet" href="../StyleSheet1.css" />
+</head>
+<body>
+    <header id="darkBackground">
+
+        <h1>Welcome to my Guessing Game! Please Enjoy!</h1>
+        <style>
+            .jsDoc {
+                background-image: url(../hotel-wallpaper.png);
+                color: dimgray;
+                border: 2px solid dimgray;
+                height: 2em;
+                width: 150px;
+                margin-left: 20px;
+            }
+
+            .win {
+                background-image: url(../checkerboard-cross.png);
+                color: #6600cc;
+                border: 2px solid dimgray;
+                height: auto;
+                width: 150px;
+                margin-left: 20px;
+            }
+        </style>
+
+    </header>
+
+    <main id="darkBackground">
+        
+        <script>
+
+            var num = Math.floor((Math.random() * 100) + 1); //generates random number
+            alert("The random number is: " + num);//alert box showing the random number
+
+            var guess;
+            var tries = 0;           
+            
+            do {
+                
+                //receive guess and apply it to var
+                guess = prompt("Guess the number between 1-100: "); //Fix ME!!! needs to be function call, not a prompt
+                tries += 1;
+                document.write("<p class = 'jsDoc'> Try #" + tries + " you guessed: " + guess + " <\p>");//FIX ME!!! Needs to write to window instead of document
+
+                if (guess == undefined) {
+                    break;
+                }
+
+                if (isNaN(guess)) { //validation: check to see if it's a number
+                    alert("That wasn't a number! try again");//if not number between 1-100 tell them to guess an integer within range   
+                } //end while not a number loop
+
+                if (!isNaN(guess)) {
+                    if (guess > 100 || guess < 1) {
+                        alert("Your guess wasn't in range! Please guess a number between 1-100.");
+                        continue;
+                    }
+
+                    if (guess > num) {
+                        alert("Your guess was too high! Try guessing a lower number.");//if higher tell them to guess lower
+                    }
+
+                    else if (guess < num) {//else tell them to guess higher 
+                        alert("Your guess was too low! Try guessing a higher number.");
+                    }
+                    else { 
+                        alert("You won! You guessed the correct number!");//else they guessed correctly! break the loop
+                        document.write("<p class = 'win'> Your winning guess was: " + guess + ", which was try number " + tries + ".  <\p>");//write guess to document
+                    }
+
+                } //end is a number loop
+
+
+            } while (guess != num);//end while loop for guess is incorrect
+
+
+        </script>
+
+
+
+    </main>
+
+    <nav id="darkBackground">
+        <ul>
+
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment1/recipe.html" alt="Assignment 1" target="_blank"> Assignment 1 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment2/ImageMap.html" alt="Assignment 2" target="_blank"> Assignment 2 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318" alt="Assignment 3" target="_blank"> Assignment 3 </a>
+            </li>
+            <li vertical id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment4/Basketball.html" alt="Assignment 4" target="_blank"> Assignment 4 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.html" alt="Assignment 5" target="_blank"> Assignment 5 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.html" alt="Assignment 6" target="_blank"> Assignment 6 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment7/Assignment7.html" alt="Assignment 7" target="_blank"> Assignment 7 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment8/Assignment8.html" alt="Assignment 8" target="_blank"> Assignment 8 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment9/Assignment9.html" alt="Assignment 9" target="_blank"> Assignment 9 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Midterm/MidtermPractice.html" alt="Midterm" target="_blank"> Midterm </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Final/Final.html" alt="Final" target="_blank"> Final </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <footer id="darkBackground">
+
+        <span><a href="https://weber.edu" alt="Weber State University" target="_blank"> Weber State University </a></span>
+        <span><a href="http://www.w3schools.com/html" alt="W3Schools HTML" target="_blank"> W3Schools HTML </a></span>
+        <span><a href="http://www.w3schools.com/css" alt="W3Schools CSS" target="_blank"> W3Schools CSS </a></span>
+        <span><a href="http://www.w3schools.com/js" alt="W3Schools JavaScript" target="_blank"> W3Schools JavaScript </a></span>
+        <span><a href="http://www.grsites.com/archive/textures/" alt="GR Sites Textures" target="_blank"> GR Sites Textures </a></span>
+    </footer>
+</body>
+</html>

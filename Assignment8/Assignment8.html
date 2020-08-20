@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment 8</title>
+    <link rel="stylesheet" href="../StyleSheet1.css" />
+    
+</head>
+<body>
+    <header id="darkBackground">
+
+        <h1>Welcome to my Guessing Game! Please Enjoy!</h1>
+
+    </header>
+        
+    <main id="darkBackground">
+        <p style="margin-left: 20px">
+            <label for="guessBox">Enter your guess: </label>
+            <input type="text" id="guessBox" name="guessBox" />
+
+            <button id="submitButton">
+                Submit
+            </button>
+        </p>
+
+        <textarea id="outputBox" style="height: 500px; width: 50%; display: block; padding: 20px;"></textarea>
+        
+
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("guessBox").focus();
+            });
+
+            var num = Math.floor((Math.random() * 100) + 1); //generates random number
+            alert("The random number is: " + num);//alert box showing the random number
+            var tries = 0; //this isn't incrementing, or it's not printing. One or both of those things.
+
+            document.getElementById("submitButton").addEventListener("click", checkValues);
+
+            function checkValues() {
+                var guess = document.getElementById("guessBox").value;
+                if (isNaN(guess)) {
+                    alert("That was not a number, please try again.");
+                    document.getElementById("guessBox").value = '';
+                    document.getElementById("guessBox").focus();
+                    return;
+                }
+                if (guess > 100 || guess < 1) {
+                    alert("Your guess was out of range. Please guess a number between 1-100.");
+                    document.getElementById("guessBox").value = '';
+                    document.getElementById("guessBox").focus();
+                    return;
+                }
+
+                tries += 1;
+
+                if (guess < num) {
+                    document.getElementById("outputBox").innerHTML += "You guessed: " + guess + ", but it was too low.\n";
+                    document.getElementById("guessBox").value = '';
+                    document.getElementById("guessBox").focus();
+                }
+                else if (guess > num) {
+                    document.getElementById("outputBox").innerHTML += "You guessed: " + guess + ", but it was too high.\n";
+                    document.getElementById("guessBox").value = '';
+                    document.getElementById("guessBox").focus();
+                }
+
+                else {
+                    var string = ""; 
+                    if (tries == 1) {
+                        string = " try.\n";
+                    }
+                    else {
+                        string = " tries. \n";
+                    }
+                    document.getElementById("outputBox").innerHTML += "You guessed: " + guess + ". You won in " + tries + string;
+                    document.getElementById("outputBox").innerHTML += "Press F5 if you would like to play again.\n";
+                    document.getElementById("guessBox").value = '';
+                    document.getElementById("submitButton").disabled = true;
+                }
+            };
+
+        </script>
+
+
+    </main>
+
+    <nav id="darkBackground">
+        <ul>
+
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment1/recipe.html" alt="Assignment 1" target="_blank"> Assignment 1 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment2/ImageMap.html" alt="Assignment 2" target="_blank"> Assignment 2 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318" alt="Assignment 3" target="_blank"> Assignment 3 </a>
+            </li>
+            <li vertical id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment4/Basketball.html" alt="Assignment 4" target="_blank"> Assignment 4 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.html" alt="Assignment 5" target="_blank"> Assignment 5 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment5/Assignment5.html" alt="Assignment 6" target="_blank"> Assignment 6 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment7/Assignment7.html" alt="Assignment 7" target="_blank"> Assignment 7 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment8/Assignment8.html" alt="Assignment 8" target="_blank"> Assignment 8 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Assignment9/Assignment9.html" alt="Assignment 9" target="_blank"> Assignment 9 </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Midterm/MidtermPractice.html" alt="Midterm" target="_blank"> Midterm </a>
+            </li>
+            <li id="darkBackground">
+                <a href="https://icarus.cs.weber.edu/~ch07318/Final/Final.html" alt="Final" target="_blank"> Final </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <footer id="darkBackground">
+
+        <span><a href="https://weber.edu" alt="Weber State University" target="_blank"> Weber State University </a></span>
+        <span><a href="http://www.w3schools.com/html" alt="W3Schools HTML" target="_blank"> W3Schools HTML </a></span>
+        <span><a href="http://www.w3schools.com/css" alt="W3Schools CSS" target="_blank"> W3Schools CSS </a></span>
+        <span><a href="http://www.w3schools.com/js" alt="W3Schools JavaScript" target="_blank"> W3Schools JavaScript </a></span>
+        <span><a href="http://www.grsites.com/archive/textures/" alt="GR Sites Textures" target="_blank"> GR Sites Textures </a></span>
+    </footer>
+</body>
+</html>

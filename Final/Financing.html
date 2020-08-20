@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Financing</title>
+    <link rel="stylesheet" href="StyleSheet1.css" />
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("Submit").addEventListener("onClick", calculate);
+        }); 
+
+        function calculate() {
+            var amt = eval(document.getElementById("amount").value);
+            var yrs = eval(document.getElementById("years").value) * 12;
+            var rte = eval(document.getElementById("rate").value) / 1200;
+            var pmt = (rte + (rte / (Math.pow((1 + rte), (yrs)) - 1))) * amt;
+            pmt = pmt * 100;
+            pmt = Math.round(pmt);
+            pmt = pmt / 100;
+            var pi = (pmt * yrs) * 100;
+            pi = Math.round(pi);
+            pi = pi / 100;
+            document.getElementById("payment").innerHTML = pmt;
+            document.getElementById("pi").innerHTML = pi;
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <section style="font-size: 4em; font-weight: bold; float: left;"> Mike's Auto Mart </section>
+        <section style="display: inline-block; float: right; padding: 20px;">
+            123 Main Street <br />
+            Anywhere, UT 88888 <br />
+            Phone: 999-999-9999 <br />
+            Email: mikesfakemail@autos.com <br />
+        </section>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Final.html" alt="Mike's Auto Mart Home"> Home </a></li>
+            <li><a href="Inventory.html" alt="Mike's Auto Mart Inventory"> Inventory </a></li>
+            <li class="currentTab"><a href="Financing.html" alt="Mike's Auto Mart Financing"> Financing </a></li>
+            <li><a href="AboutUs.html" alt="Mike's Auto Mart Financing"> About Us </a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="homeleft">
+            <h2> Links to financial institutions </h2>
+            <p> <a href="https://autofinance.chase.com/auto-finance/home" alt="Chase Bank Auto Loans" target="_blank">Chase Bank</a> </p>
+            <p> <a href="https://www.usbank.com/loans-credit-lines/auto-loans.html" alt="US Bank Auto Loans" target="_blank">US Bank</a> </p>
+            <p> <a href="https://www.americafirst.com/loans/vehicle-loans/auto-loans.html?gclid=Cj0KCQjws_r0BRCwARIsAMxfDRieaw8P_kGLI6BSzhn6EoVUHPCrXup-si2DJ9rdDrZJOtOgNDlZjJ4aAv8LEALw_wcB&cid=ga-da-autoloans-google-ln-ac-2017920&ef_id=Cj0KCQjws_r0BRCwARIsAMxfDRieaw8P_kGLI6BSzhn6EoVUHPCrXup-si2DJ9rdDrZJOtOgNDlZjJ4aAv8LEALw_wcB:G:s&s_kwcid=AL!5472!3!222355230428!p!!g!!america%20first%20credit%20union%20car%20loans" alt="America First Credit Union Auto Loans" target="_blank">America First Credit Union</a> </p>
+            <p> <a href="https://www.zionsbank.com/personal-banking/loans/car-loan/" alt="Zion Bank Auto Loans" target="_blank">Zion Bank</a> </p>
+            <p> <a href="https://www.bankofamerica.com/auto-loans/" alt="Bank of America Loans" target="_blank">Bank of America</a> </p>
+
+        </div>
+        <div class="homeright" style="text-align: center;">
+            
+            <h2>Loan Payment Calculator</h2>
+
+            
+                <div class="formelements">
+                    <label> Years: </label>
+                    <input type="text" name="years" id="years" />
+                </div>
+
+                <div class="formelements">
+                    <label>Interest Rate: </label>
+                    <input type="text" name="interest" id="rate" />
+                </div>
+
+                <div class="formelements">
+                    <label>Loan Amount: </label>
+                    <input type="text" name="principal" id="amount" />
+                </div>
+
+                <div class="formelements">
+                    <button type="submit" id="Submit" value="Calculate" onclick="calculate()">Submit</button>
+                    <button type="reset" id="reset" value="Reset">Reset</button>
+                </div>
+
+                <h2>Loan Details</h2>
+                <div class="formelements">
+                    <label>Monthly Payment: </label>
+                    <span id="payment" style="height: 1.25em; width: 10%; display: block; padding: 3px; display: inline-block;"></span>
+                </div>
+
+                <div class="formelements">
+                    <label>Total Principle and Interest:</label>
+                    <span id="pi" style="height: 1.25em; width: 10%; display: block; padding: 3px; display: inline-block;"></span>
+                </div>
+
+
+        </div>
+    </main>
+
+    <footer>
+        <p> &copy; Cecilia Harvey 2020     </p>
+    </footer>
+</body>
+</html>
